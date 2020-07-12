@@ -1,22 +1,8 @@
 const User = require('./../User');
+const Repository = require('./repository');
 
-class UserRepository {
+class UserRepository extends Repository{
 
-    /**
-     * @return {User|Model|Query}
-     */
-    getModel() {
-        return User;
-    }
-
-    /**
-     * @param {Object} params
-     * @return {User|Model}
-     */
-    getNew(params) {
-        const model = this.getModel();
-        return new model(params);
-    }
 }
 
-module.exports = new UserRepository();
+module.exports = new UserRepository(User);
